@@ -24,7 +24,6 @@ public class TutorialMod
     public static final String MOD_ID = "tutorialmod";
     private static final Logger LOGGER = LogManager.getLogger();
 
-    // Add a comment
     public TutorialMod() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

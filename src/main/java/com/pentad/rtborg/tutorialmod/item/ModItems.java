@@ -1,4 +1,4 @@
-package com.pentad.rtborg.tutorialmod.items;
+package com.pentad.rtborg.tutorialmod.item;
 
 import com.pentad.rtborg.tutorialmod.TutorialMod;
 import net.minecraft.world.item.CreativeModeTab;

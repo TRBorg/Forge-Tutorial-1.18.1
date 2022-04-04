@@ -1,6 +1,7 @@
 package com.pentad.rtborg.tutorialmod.block;
 
 import com.pentad.rtborg.tutorialmod.TutorialMod;
+import com.pentad.rtborg.tutorialmod.block.custom.SpeedyBlock;
 import com.pentad.rtborg.tutorialmod.item.ModCreativeModeTab;
 import com.pentad.rtborg.tutorialmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -43,6 +44,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> ENDSTONE_CITRINE_ORE = registerBlock("endstone_citrine_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> SPEEDY_BLOCK = registerBlock("speedy_block",
+            () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(4f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

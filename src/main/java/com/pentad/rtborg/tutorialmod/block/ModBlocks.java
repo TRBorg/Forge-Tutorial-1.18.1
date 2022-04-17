@@ -52,7 +52,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CITRINE_STAIRS = registerBlock("citrine_stairs",
             () -> new StairBlock(
                     () -> ModBlocks.CITRINE_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.of(Material.METAL)
+                    BlockBehaviour.Properties.of(Material.STONE)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
 
     public static final RegistryObject<Block> CITRINE_SLAB = registerBlock("citrine_slab",

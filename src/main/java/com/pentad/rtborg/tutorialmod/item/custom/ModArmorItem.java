@@ -57,6 +57,7 @@ public class ModArmorItem extends ArmorItem {
         }
     }
 
+
     private boolean hasFullSuitOfArmorOn(Player player) {
         ItemStack boots = player.getInventory().getArmor(0);
         ItemStack leggings = player.getInventory().getArmor(1);

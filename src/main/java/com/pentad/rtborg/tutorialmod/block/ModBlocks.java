@@ -1,6 +1,8 @@
 package com.pentad.rtborg.tutorialmod.block;
 
 import com.pentad.rtborg.tutorialmod.TutorialMod;
+import com.pentad.rtborg.tutorialmod.block.custom.CitrineLampBlock;
+import com.pentad.rtborg.tutorialmod.block.custom.CucumberPlantBlock;
 import com.pentad.rtborg.tutorialmod.block.custom.SpeedyBlock;
 import com.pentad.rtborg.tutorialmod.item.ModCreativeModeTab;
 import com.pentad.rtborg.tutorialmod.item.ModItems;
@@ -97,6 +99,15 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> WINTER_WINDOW = registerBlock("winter_window",
             () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> CITRINE_LAMP = registerBlock("citrine_lamp",
+            () -> new CitrineLampBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2)
+                    .requiresCorrectToolForDrops().lightLevel(
+                            (state) -> state.getValue(CitrineLampBlock.CLICKED) ? 15 : 0)),
+            ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> CUCUMBER_PLANT = registerBlockWithoutBlockItem("cucumber_plant",
+            () -> new CucumberPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);

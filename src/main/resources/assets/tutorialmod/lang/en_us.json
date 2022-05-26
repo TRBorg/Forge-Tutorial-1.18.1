@@ -9,6 +9,7 @@
   "item.tutorialmod.citrine_shovel": "Citrine Shovel",
   "item.tutorialmod.citrine_hoe": "Citrine Hoe",
   "item.tutorialmod.citrine_sword": "Citrine Sword",
+  "item.tutorialmod.karma_sword": "Karma Sword",
 
   "item.tutorialmod.citrine_helmet": "Citrine Helmet",
   "item.tutorialmod.citrine_chestplate": "Citrine Chestplate",
@@ -17,7 +18,11 @@
 
   "item.tutorialmod.magic_dust": "Magic Dust",
 
+  "item.tutorialmod.data_tablet": "Data Tablet",
+
   "item.tutorialmod.kaupen_bow": "Kaupenbow",
+
+  "item.tutorialmod.cucumber_seeds": "Cucumber Seeds",
 
   "block.tutorialmod.citrine_block": "Citrine Block",
   "block.tutorialmod.raw_citrine_block": "Raw Citrine Block",
@@ -42,6 +47,10 @@
   "block.tutorialmod.potted_pink_rose": "Potted Pink Rose",
 
   "block.tutorialmod.winter_window": "Winter Window",
+
+  "block.tutorialmod.citrine_lamp": "Citrine Lamp",
+
+  "block.tutorialmod.cucumber_plant": "Cucumber Plant",
 
   "itemGroup.tutorialtab": "Tutorial Mod",
 

@@ -1,6 +1,8 @@
 package com.pentad.rtborg.tutorialmod.item;
 
 import com.pentad.rtborg.tutorialmod.TutorialMod;
+import com.pentad.rtborg.tutorialmod.block.ModBlocks;
+import com.pentad.rtborg.tutorialmod.item.custom.DataTabletItem;
 import com.pentad.rtborg.tutorialmod.item.custom.DowsingRodItem;
 import com.pentad.rtborg.tutorialmod.item.custom.LevitationSwordItem;
 import com.pentad.rtborg.tutorialmod.item.custom.ModArmorItem;
@@ -37,6 +39,9 @@ public class ModItems {
     public static final RegistryObject<Item> CITRINE_SWORD = ITEMS.register("citrine_sword",
             () -> new LevitationSwordItem(ModTiers.CITRINE, 2, 3f, new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
 
+    public static final RegistryObject<Item> KARMA_SWORD = ITEMS.register("karma_sword",
+            () -> new LevitationSwordItem(ModTiers.CITRINE, 2, 3f, new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
+
     public static final RegistryObject<Item> CITRINE_PICKAXE = ITEMS.register("citrine_pickaxe",
             () -> new PickaxeItem(ModTiers.CITRINE, 1, 1f, new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
 
@@ -70,8 +75,15 @@ public class ModItems {
     public static final RegistryObject<Item> MAGIC_DUST = ITEMS.register("magic_dust",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
 
+    public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
+            () -> new DataTabletItem(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(1)));
+
     public static final RegistryObject<Item> KAUPENBOW = ITEMS.register("kaupen_bow",
             () -> new BowItem(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).durability(500)));
+
+    public static final RegistryObject<Item> CUCUMBER_SEEDS = ITEMS.register("cucumber_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.CUCUMBER_PLANT.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

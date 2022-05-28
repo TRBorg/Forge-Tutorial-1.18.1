@@ -4,6 +4,7 @@ import com.pentad.rtborg.tutorialmod.item.ModItems;
 import com.pentad.rtborg.tutorialmod.util.InventoryUtil;
 import com.pentad.rtborg.tutorialmod.util.ModTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -69,7 +70,7 @@ public class DowsingRodItem extends Item {
     }
 
     private boolean isValuableBlock(Block block) {
-        return ModTags.Blocks.DOWSING_ROD_VALUABLES.contains(block);
+        return Registry.BLOCK.getHolderOrThrow(Registry.BLOCK.getResourceKey(block).get()).is(ModTags.Blocks.DOWSING_ROD_VALUABLES);
 //        return block == Blocks.COAL_ORE || block == Blocks.COPPER_ORE
 //                || block == Blocks.DIAMOND_ORE || block == Blocks.IRON_ORE;
     }

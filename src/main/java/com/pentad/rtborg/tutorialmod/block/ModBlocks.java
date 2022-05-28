@@ -3,15 +3,20 @@ package com.pentad.rtborg.tutorialmod.block;
 import com.pentad.rtborg.tutorialmod.TutorialMod;
 import com.pentad.rtborg.tutorialmod.block.custom.CitrineLampBlock;
 import com.pentad.rtborg.tutorialmod.block.custom.CucumberPlantBlock;
+import com.pentad.rtborg.tutorialmod.block.custom.ModFlammableRotatedPillarBlock;
 import com.pentad.rtborg.tutorialmod.block.custom.SpeedyBlock;
 import com.pentad.rtborg.tutorialmod.item.ModCreativeModeTab;
 import com.pentad.rtborg.tutorialmod.item.ModItems;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -109,6 +114,37 @@ public class ModBlocks {
     public static final RegistryObject<Block> CUCUMBER_PLANT = registerBlockWithoutBlockItem("cucumber_plant",
             () -> new CucumberPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
 
+    public static final RegistryObject<Block> EBONY_LOG = registerBlock("ebony_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)),
+            ModCreativeModeTab.TUTORIAL_TAB);
+    public static final RegistryObject<Block> EBONY_WOOD = registerBlock("ebony_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)),
+            ModCreativeModeTab.TUTORIAL_TAB);
+    public static final RegistryObject<Block> STRIPPED_EBONY_LOG = registerBlock("stripped_ebony_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)),
+            ModCreativeModeTab.TUTORIAL_TAB);
+    public static final RegistryObject<Block> STRIPPED_EBONY_WOOD = registerBlock("stripped_ebony_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)),
+            ModCreativeModeTab.TUTORIAL_TAB);
+
+
+    public static final RegistryObject<Block> EBONY_PLANKS = registerBlock("ebony_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 5;
+                }
+            }, ModCreativeModeTab.TUTORIAL_TAB);
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
     }
